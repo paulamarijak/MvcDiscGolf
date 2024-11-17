@@ -1,12 +1,11 @@
-﻿using System;
+﻿using MvcDiscGolf.Models;
+using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MvcDiscGolf.Models;
 
 namespace MvcDiscGolf.Controllers
 {
@@ -15,11 +14,33 @@ namespace MvcDiscGolf.Controllers
         private GameDBContext db = new GameDBContext();
 
         // GET: Games
-        public ActionResult Index()
+        public ActionResult Index(string gameLevel, string searchString)
         {
-            return View(db.Games.ToList());
-        }
+            var LevelLst = new List<string>();
 
+            var LevelQry = from d in db.Games
+                           orderby d.Level
+                           select d.Level;
+
+            LevelLst.AddRange(LevelQry.Distinct());
+            ViewBag.gameLevel = new SelectList(LevelLst);
+
+            var games = from m in db.Games
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                games = games.Where(s => s.Course.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(gameLevel))
+            {
+                games = games.Where(x => x.Level == gameLevel);
+            }
+
+
+            return View(games);
+        }
         // GET: Games/Details/5
         public ActionResult Details(int? id)
         {
