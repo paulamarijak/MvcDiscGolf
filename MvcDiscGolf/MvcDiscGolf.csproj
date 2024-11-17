@@ -145,6 +145,14 @@
     <Compile Include="Migrations\202411171734182_AddRatingField.Designer.cs">
       <DependentUpon>202411171734182_AddRatingField.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411171856034_DataAnnotations.cs" />
+    <Compile Include="Migrations\202411171856034_DataAnnotations.Designer.cs">
+      <DependentUpon>202411171856034_DataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202411171858480_DataAnnotations1.cs" />
+    <Compile Include="Migrations\202411171858480_DataAnnotations1.Designer.cs">
+      <DependentUpon>202411171858480_DataAnnotations1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -247,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411171734182_AddRatingField.resx">
       <DependentUpon>202411171734182_AddRatingField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411171856034_DataAnnotations.resx">
+      <DependentUpon>202411171856034_DataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411171858480_DataAnnotations1.resx">
+      <DependentUpon>202411171858480_DataAnnotations1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
