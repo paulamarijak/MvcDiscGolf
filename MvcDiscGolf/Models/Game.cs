@@ -15,6 +15,7 @@ namespace MvcDiscGolf.Models
         public DateTime OpeningDate { get; set; }
         public string Level { get; set; }
         public decimal Price { get; set; }
+        public string Rating { get; set; }
     }
     public class GameDBContext : DbContext
     {

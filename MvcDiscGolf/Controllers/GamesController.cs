@@ -67,7 +67,7 @@ namespace MvcDiscGolf.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Course,OpeningDate,Level,Price")] Game game)
+        public ActionResult Create([Bind(Include = "ID,Course,OpeningDate,Level,Price,Rating")] Game game)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace MvcDiscGolf.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Course,OpeningDate,Level,Price")] Game game)
+        public ActionResult Edit([Bind(Include = "ID,Course,OpeningDate,Level,Price,Rating")] Game game)
         {
             if (ModelState.IsValid)
             {
